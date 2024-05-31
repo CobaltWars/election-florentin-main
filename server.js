@@ -14,7 +14,7 @@ app.get('/data', (req, res) => {
             res.status(500).send('Error reading data');
             return;
         }
-        res.send(JSON.parse(data));
+        res.json(JSON.parse(data));
     });
 });
 
