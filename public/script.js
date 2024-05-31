@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let data = { ministers: [], testimonies: [], news: [] };
 
     function loadData() {
-        fetch('/data')
+        fetch('/data.json')
             .then(response => response.json())
             .then(fetchedData => {
                 data = fetchedData;
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function saveData() {
-        fetch('/data', {
+        fetch('/data.json', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
