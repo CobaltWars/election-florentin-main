@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let data = { ministers: [], testimonies: [], news: [] };
 
     function loadData() {
-        fetch('/data')
+        fetch('/data.json')
             .then(response => response.json())
             .then(fetchedData => {
                 data = fetchedData;
