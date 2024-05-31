@@ -1,0 +1,16 @@
+{
+    "ministers": [
+      { "name": "Ministre de l'Éducation", "person": "Alice Dupont" },
+      { "name": "Ministre des Sports", "person": "Bob Martin" },
+      { "name": "Ministre de la Culture", "person": "Clara Bernard" }
+    ],
+    "testimonies": [
+      { "name": "Jean", "message": "Le meilleur candidat pour notre école !" },
+      { "name": "Marie", "message": "Il fera de grandes choses." }
+    ],
+    "news": [
+      { "title": "Lancement de la campagne", "content": "La campagne de Florentin a officiellement commencé !" },
+      { "title": "Discours d'ouverture", "content": "Florentin a prononcé un discours inspirant pour l'ouverture de sa campagne." }
+    ]
+  }
+  

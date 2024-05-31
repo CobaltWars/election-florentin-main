@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Élection Présidentielle - Florentin</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Élection Présidentielle 2024</h1>
+        <h2>Florentin Président !</h2>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#programme">Programme</a></li>
+            <li><a href="#ministres">Ministres</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#nouvelles">Nouvelles</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="accueil">
+            <h2>Bienvenue sur le site officiel de la campagne présidentielle de Florentin</h2>
+            <p>Florentin est le candidat idéal pour apporter des changements positifs à notre lycée. Rejoignez-nous pour faire de notre école un endroit meilleur !</p>
+        </section>
+        <section id="programme">
+            <h2>Programme</h2>
+            <p>Découvrez le programme complet de Florentin pour améliorer notre lycée :</p>
+            <ul>
+                <li>Amélioration des infrastructures</li>
+                <li>Promotion des activités sportives et culturelles</li>
+                <li>Mise en place de nouveaux clubs</li>
+                <li>Amélioration de la cantine scolaire</li>
+            </ul>
+        </section>
+        <section id="ministres">
+            <h2>Les Ministres</h2>
+            <ul id="ministre-list">
+                <!-- Les ministres seront ajoutés ici par JavaScript -->
+            </ul>
+            <button id="add-minister">Ajouter un Ministre</button>
+        </section>
+        <section id="galerie">
+            <h2>Galerie</h2>
+            <div class="gallery">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+                <img src="image3.jpg" alt="Image 3">
+                <!-- Ajoutez plus d'images ici -->
+            </div>
+        </section>
+        <section id="temoignages">
+            <h2>Témoignages</h2>
+            <div id="temoignage-list">
+                <!-- Témoignages seront ajoutés ici par JavaScript -->
+            </div>
+            <button id="add-temoignage">Ajouter un Témoignage</button>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form id="contact-form">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+        <section id="nouvelles">
+            <h2>Nouvelles</h2>
+            <div id="news-list">
+                <!-- Les articles de nouvelles seront ajoutés ici par JavaScript -->
+            </div>
+            <button id="add-news">Ajouter un Article</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Campagne Présidentielle de Florentin. Tous droits réservés.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
