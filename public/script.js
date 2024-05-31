@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const ministerPerson = prompt("Entrez le nom du ministre :");
         if (ministerName && ministerPerson) {
             data.ministers.push({ name: ministerName, person: ministerPerson });
-            saveData();
             displayMinisters(data.ministers);
+            saveData();
         }
     });
 
@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const message = prompt("Entrez votre témoignage :");
         if (name && message) {
             data.testimonies.push({ name, message });
-            saveData();
             displayTestimonies(data.testimonies);
+            saveData();
         }
     });
 
@@ -84,8 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const content = prompt("Entrez le contenu de l'article :");
         if (title && content) {
             data.news.push({ title, content });
-            saveData();
             displayNews(data.news);
+            saveData();
         }
     });
 
