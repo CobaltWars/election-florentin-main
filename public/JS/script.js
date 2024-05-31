@@ -46,5 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Merci pour votre message !');
+        document.getElementById('contact-form').reset();
+    });
+
     loadData();
 });
