@@ -3,10 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const testimonyList = document.getElementById('temoignage-list');
     const newsList = document.getElementById('news-list');
 
+    let data = { ministers: [], testimonies: [], news: [] };
+
     function loadData() {
         fetch('/data')
             .then(response => response.json())
-            .then(data => {
+            .then(fetchedData => {
+                data = fetchedData;
                 displayMinisters(data.ministers);
                 displayTestimonies(data.testimonies);
                 displayNews(data.news);
@@ -14,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Erreur lors du chargement des données :', error));
     }
 
-    function saveData(data) {
+    function saveData() {
         fetch('/data', {
             method: 'POST',
             headers: {
@@ -60,14 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const ministerName = prompt("Entrez le nom du ministère :");
         const ministerPerson = prompt("Entrez le nom du ministre :");
         if (ministerName && ministerPerson) {
-            fetch('/data')
-                .then(response => response.json())
-                .then(data => {
-                    data.ministers.push({ name: ministerName, person: ministerPerson });
-                    saveData(data);
-                    displayMinisters(data.ministers);
-                })
-                .catch(error => console.error('Erreur lors de l\'ajout du ministre :', error));
+            data.ministers.push({ name: ministerName, person: ministerPerson });
+            saveData();
+            displayMinisters(data.ministers);
         }
     });
 
@@ -75,14 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const name = prompt("Entrez votre nom :");
         const message = prompt("Entrez votre témoignage :");
         if (name && message) {
-            fetch('/data')
-                .then(response => response.json())
-                .then(data => {
-                    data.testimonies.push({ name, message });
-                    saveData(data);
-                    displayTestimonies(data.testimonies);
-                })
-                .catch(error => console.error('Erreur lors de l\'ajout du témoignage :', error));
+            data.testimonies.push({ name, message });
+            saveData();
+            displayTestimonies(data.testimonies);
         }
     });
 
@@ -90,14 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const title = prompt("Entrez le titre de l'article :");
         const content = prompt("Entrez le contenu de l'article :");
         if (title && content) {
-            fetch('/data')
-                .then(response => response.json())
-                .then(data => {
-                    data.news.push({ title, content });
-                    saveData(data);
-                    displayNews(data.news);
-                })
-                .catch(error => console.error('Erreur lors de l\'ajout de l\'article :', error));
+            data.news.push({ title, content });
+            saveData();
+            displayNews(data.news);
         }
     });
 
