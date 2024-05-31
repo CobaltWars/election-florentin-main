@@ -1,14 +1,15 @@
 const express = require('express');
 const fs = require('fs');
 const bodyParser = require('body-parser');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/data', (req, res) => {
-    fs.readFile('data.json', 'utf8', (err, data) => {
+    fs.readFile(path.join(__dirname, 'data.json'), 'utf8', (err, data) => {
         if (err) {
             res.status(500).send('Error reading data');
             return;
@@ -19,7 +20,7 @@ app.get('/data', (req, res) => {
 
 app.post('/data', (req, res) => {
     const newData = req.body;
-    fs.writeFile('data.json', JSON.stringify(newData, null, 2), 'utf8', (err) => {
+    fs.writeFile(path.join(__dirname, 'data.json'), JSON.stringify(newData, null, 2), 'utf8', (err) => {
         if (err) {
             res.status(500).send('Error writing data');
             return;
