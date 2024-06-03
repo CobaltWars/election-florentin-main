@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Screen loading
+    const loadingScreen = document.getElementById('loading-screen');
+    setTimeout(() => {
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500);
+    }, 2000); // Adjust the duration as needed
+
+    // Other JS functions remain the same
     const ministerList = document.getElementById('ministre-list');
     const testimonyList = document.getElementById('temoignage-list');
     const newsList = document.getElementById('news-list');
@@ -10,15 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(fetchedData => {
                 data = fetchedData;
-                if (ministerList) {
-                    displayMinisters(data.ministers);
-                }
-                if (testimonyList) {
-                    displayTestimonies(data.testimonies);
-                }
-                if (newsList) {
-                    displayNews(data.news);
-                }
+                displayMinisters(data.ministers);
+                displayTestimonies(data.testimonies);
+                displayNews(data.news);
             })
             .catch(error => console.error('Erreur lors du chargement des données :', error));
     }
