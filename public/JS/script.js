@@ -10,9 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(fetchedData => {
                 data = fetchedData;
-                displayMinisters(data.ministers);
-                displayTestimonies(data.testimonies);
-                displayNews(data.news);
+                if (ministerList) {
+                    displayMinisters(data.ministers);
+                }
+                if (testimonyList) {
+                    displayTestimonies(data.testimonies);
+                }
+                if (newsList) {
+                    displayNews(data.news);
+                }
             })
             .catch(error => console.error('Erreur lors du chargement des données :', error));
     }
@@ -46,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
+    document.getElementById('contact-form')?.addEventListener('submit', function(event) {
         event.preventDefault();
         alert('Merci pour votre message !');
         document.getElementById('contact-form').reset();
