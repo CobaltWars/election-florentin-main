@@ -1,66 +1,72 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Screen loading
-    const loadingScreen = document.getElementById('loading-screen');
-    setTimeout(() => {
-        loadingScreen.style.opacity = '0';
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 500);
-    }, 2000); // Adjust the duration as needed
-
-    // Other JS functions remain the same
     const ministerList = document.getElementById('ministre-list');
     const testimonyList = document.getElementById('temoignage-list');
     const newsList = document.getElementById('news-list');
 
     let data = { ministers: [], testimonies: [], news: [] };
 
-    function loadData() {
-        fetch('/data.json')
-            .then(response => response.json())
-            .then(fetchedData => {
-                data = fetchedData;
-                displayMinisters(data.ministers);
-                displayTestimonies(data.testimonies);
-                displayNews(data.news);
-            })
-            .catch(error => console.error('Erreur lors du chargement des données :', error));
+    const loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.style.display = 'flex';
+
+    fetch('JSON/data.json')
+        .then(response => response.json())
+        .then(json => {
+            data = json;
+            populateMinisters();
+            populateTestimonies();
+            populateNews();
+            loadingScreen.style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des données:', error);
+            loadingScreen.style.display = 'none';
+        });
+
+    function populateMinisters() {
+        if (ministerList) {
+            data.ministers.forEach(minister => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${minister.nom} - ${minister.role}`;
+                ministerList.appendChild(listItem);
+            });
+        }
     }
 
-    function displayMinisters(ministers) {
-        ministerList.innerHTML = '';
-        ministers.forEach(minister => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${minister.name}: ${minister.person}`;
-            ministerList.appendChild(listItem);
+    function populateTestimonies() {
+        if (testimonyList) {
+            data.testimonies.forEach(testimony => {
+                const item = document.createElement('div');
+                item.classList.add('temoignage-item');
+                item.innerHTML = `<h3>${testimony.nom}</h3><p>${testimony.message}</p>`;
+                testimonyList.appendChild(item);
+            });
+        }
+    }
+
+    function populateNews() {
+        if (newsList) {
+            data.news.forEach(news => {
+                const item = document.createElement('div');
+                item.classList.add('news-item');
+                item.innerHTML = `<h3>${news.titre}</h3><p>${news.contenu}</p>`;
+                newsList.appendChild(item);
+            });
+        }
+    }
+
+    const form = document.getElementById('contact-form');
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = form.name.value;
+            const email = form.email.value;
+            const message = form.message.value;
+
+            console.log(`Nom: ${name}`);
+            console.log(`Email: ${email}`);
+            console.log(`Message: ${message}`);
+
+            form.reset();
         });
     }
-
-    function displayTestimonies(testimonies) {
-        testimonyList.innerHTML = '';
-        testimonies.forEach(testimony => {
-            const testimonyItem = document.createElement('div');
-            testimonyItem.classList.add('temoignage-item');
-            testimonyItem.innerHTML = `<h3>${testimony.name}</h3><p>${testimony.message}</p>`;
-            testimonyList.appendChild(testimonyItem);
-        });
-    }
-
-    function displayNews(news) {
-        newsList.innerHTML = '';
-        news.forEach(newsItem => {
-            const newsElement = document.createElement('div');
-            newsElement.classList.add('news-item');
-            newsElement.innerHTML = `<h3>${newsItem.title}</h3><p>${newsItem.content}</p>`;
-            newsList.appendChild(newsElement);
-        });
-    }
-
-    document.getElementById('contact-form')?.addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert('Merci pour votre message !');
-        document.getElementById('contact-form').reset();
-    });
-
-    loadData();
 });
