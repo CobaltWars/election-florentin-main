@@ -1,17 +1,13 @@
 {
-    "ministers": [
-        { "nom": "Alice Dupont", "role": "Ministre de l'Éducation" },
-        { "nom": "Bob Martin", "role": "Ministre de la Santé" },
-        { "nom": "Catherine Legrand", "role": "Ministre de l'Environnement" }
-    ],
-    "testimonies": [
-        { "nom": "Jean-Pierre", "message": "Florentin est le candidat idéal pour notre lycée !" },
-        { "nom": "Marie Dupuis", "message": "Son programme est exactement ce dont nous avons besoin." },
-        { "nom": "Luc Besson", "message": "Je soutiens Florentin à 100% !" }
-    ],
-    "news": [
-        { "titre": "Rassemblement pour Florentin", "contenu": "Un grand rassemblement aura lieu ce vendredi pour soutenir Florentin." },
-        { "titre": "Débat Présidentiel", "contenu": "Ne manquez pas le débat présidentiel ce mercredi à 18h." },
-        { "titre": "Nouvelle Vidéo de Campagne", "contenu": "Découvrez la nouvelle vidéo de campagne de Florentin sur notre site." }
-    ]
+  "ministers": [
+    { "name": "Ministre de l'Éducation", "person": "Alice Dupont" },
+    { "name": "Ministre des Sports", "person": "Bob Martin" },
+    { "name": "Ministre de la Culture", "person": "Clara Bernard" }
+  ],
+  "testimonies": [],
+  "news": [
+    { "title": "Lancement de la campagne", "content": "La campagne de Florentin a officiellement commencé !" },
+    { "title": "Discours d'ouverture", "content": "Florentin a prononcé un discours inspirant pour l'ouverture de sa campagne." },
+    { "title": "Soutien populaire croissant", "content": "De plus en plus de gens rejoignent la campagne de Florentin, témoignant de son engagement et de son intégrité." }
+  ]
 }
