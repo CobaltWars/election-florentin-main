@@ -10,27 +10,33 @@ body {
     font-size: 18px;
 }
 
-h1, h2 {
-    font-family: 'Lora', serif;
-    margin-bottom: 0.5em;
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+#loading-screen img {
+    width: 100px;
+    height: 100px;
 }
 
+/* Header, Nav, Footer */
 header, nav, footer {
-    background-color: #2C3E50;
+    background-color: #4CAF50;
     color: white;
     text-align: center;
     padding: 1em 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Header Styles */
 header {
-    background-color: #34495E;
     padding: 2em 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -46,7 +52,6 @@ header h2 {
     color: #ECF0F1;
 }
 
-/* Navigation Styles */
 nav {
     position: sticky;
     top: 0;
@@ -89,15 +94,21 @@ main {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    background-image: url('geometric-pattern.png'); /* Add your geometric pattern image */
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 section {
     margin-bottom: 2em;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 1em;
+    border-radius: 8px;
 }
 
 /* Button Styles */
 button {
-    background-color: #1ABC9C;
+    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -107,7 +118,7 @@ button {
 }
 
 button:hover {
-    background-color: #16A085;
+    background-color: #45a049;
     transform: scale(1.1);
 }
 
@@ -185,7 +196,7 @@ form input, form textarea {
 footer {
     text-align: center;
     padding: 2em 0;
-    background-color: #34495E;
+    background-color: #4CAF50;
     color: white;
     position: relative;
 }
