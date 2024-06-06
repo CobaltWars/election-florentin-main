@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const ministerList = document.getElementById('ministre-list');
     const testimonyList = document.getElementById('temoignage-list');
     const newsList = document.getElementById('news-list');
-
+    
     let data = { ministers: [], testimonies: [], news: [] };
 
     function loadData() {
