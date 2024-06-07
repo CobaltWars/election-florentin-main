@@ -14,7 +14,7 @@
     { "name": "Hugo Dubreuil", "message": "FloFlo est mon Kaporal depuis l'année de 4ème ! Il mérite de gagner les élections (de toute façon si vous ne le faite pas il vous dénoncera au CPE !!)" }
   ],
   "news": [
-    { "title": "Lancement de la campagne", "content": "La campagne de Florentin a officiellement commencé !" },
+    { "title": "Lancement de la campagne", "src":"src=image1.png","alt":"alt=Image 1" ,"content": "La campagne de Florentin a officiellement commencé !"},
     { "title": "Discours d'ouverture", "content": "Florentin a prononcé un discours inspirant pour l'ouverture de sa campagne." },
     { "title": "Soutien populaire croissant", "content": "De plus en plus de gens rejoignent la campagne de Florentin, témoignant de son engagement et de son intégrité." }
   ]

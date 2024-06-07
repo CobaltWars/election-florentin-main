@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         news.forEach(newsItem => {
             const newsElement = document.createElement('div');
             newsElement.classList.add('news-item');
-            newsElement.innerHTML = `<h3>${newsItem.title}</h3><p>${newsItem.content}</p>`;
+            newsElement.innerHTML = `<h3>${newsItem.title}</h3><img ${newsItem.src} ${newsItem.alt}><p>${newsItem.content}</p>`;
             newsList.appendChild(newsElement);
         });
     }
